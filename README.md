@@ -44,14 +44,13 @@ Add Vayancy TravelOS to your Claude Desktop configuration in one step:
 {
   "mcpServers": {
     "vayancy-travelos": {
-      "url": "https://api.vayancy.gr/mcp/hospitality/sse"
+      "url": "https://vayancy-agentic-brain-production.up.railway.app/mcp/hospitality/sse"
     }
   }
 }
 ```
 
-> **Direct Failover Endpoint:** If your local DNS is still propagating `api.vayancy.gr`, you can also connect directly via:  
-> `https://vayancy-agentic-brain-production.up.railway.app/mcp/hospitality/sse`
+> **Custom Domain:** You can also connect via `https://api.vayancy.gr/mcp/hospitality/sse` once custom DNS propagation is complete.
 
 ---
 
@@ -196,11 +195,11 @@ Places a 15-minute reservation lock on the property calendar and returns a secur
 
 Are you a property manager, boutique hotelier, or luxury villa owner in Greece?
 
-Connect your PMS to Vayancy TravelOS to receive direct, commission-free reservations from millions of high-net-worth travelers using Claude.
+Connect your PMS to Vayancy TravelOS to receive direct, commission-free reservations from travelers using Claude.
 
-* **Supported PMS:** WebHotelier, Avantio, HostHub, Guesty, Lodgify, SyncBnb.
+* **Supported PMS Adapters:** WebHotelier, Avantio, HostHub (SyncBnb), Lodgify.
 * **Pricing:** 0% OTA commission. Direct payout to your Stripe Connect account.
-* **Integration:** Visit [vayancy.gr/partners](https://vayancy.gr) or email `partners@vayancy.gr`.
+* **Contact & Onboarding:** Visit [vayancy.gr](https://vayancy.gr) or contact `admin@vayancy.gr`.
 
 ---
 
