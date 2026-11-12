@@ -10,6 +10,10 @@
   "version": "1.0.0",
   "remotes": [
     {
+      "type": "streamable-http",
+      "url": "https://vayancy-agentic-brain-production.up.railway.app/mcp"
+    },
+    {
       "type": "sse",
       "url": "https://vayancy-agentic-brain-production.up.railway.app/mcp/hospitality/sse"
     }
