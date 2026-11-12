@@ -1,0 +1,27 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "vayancy",
+  "version": "1.0.0",
+  "description": "Mediterranean luxury villas, boutique hotels & catamaran charter direct booking clearinghouse from Vayancy (Live PMS inventory, 0% OTA commission markup, 15-minute hold locks, direct Stripe checkout).",
+  "author": {
+    "name": "Vayancy",
+    "url": "https://vayancy.gr",
+    "email": "admin@vayancy.gr"
+  },
+  "homepage": "https://vayancy.gr",
+  "repository": "https://github.com/nikoskalyvas/vayancy-mcp",
+  "license": "MIT",
+  "keywords": [
+    "travel",
+    "hospitality",
+    "villas",
+    "hotels",
+    "catamarans",
+    "yachts",
+    "greece",
+    "mediterranean",
+    "direct-booking",
+    "pms",
+    "mcp"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "vayancy": {
+      "type": "sse",
+      "url": "https://vayancy-agentic-brain-production.up.railway.app/mcp/hospitality/sse"
+    }
+  }
+}

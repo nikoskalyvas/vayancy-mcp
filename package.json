@@ -1,21 +1,22 @@
 {
   "name": "@vayancy/mcp",
   "version": "1.0.0",
-  "description": "Model Context Protocol (MCP) server for Vayancy TravelOS — Mediterranean luxury villa and boutique hotel booking clearinghouse.",
-  "main": "index.js",
-  "bin": {
-    "vayancy-mcp": "./bin/cli.js"
-  },
+  "description": "Model Context Protocol (MCP) server for Vayancy TravelOS — Mediterranean luxury villa, boutique hotel & catamaran charter booking clearinghouse.",
   "keywords": [
     "mcp",
     "model-context-protocol",
     "claude",
     "anthropic",
+    "cursor",
+    "gemini",
     "travel",
     "hospitality",
     "greece",
     "mediterranean",
     "villas",
+    "hotels",
+    "catamarans",
+    "yacht-charters",
     "booking",
     "sse"
   ],

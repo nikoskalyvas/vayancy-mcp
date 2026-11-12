@@ -1,0 +1,11 @@
+{
+  "name": "vayancy",
+  "version": "1.0.0",
+  "description": "Direct AI clearing rail for luxury villas, boutique hotels, and catamaran charters across Greece and the Mediterranean.",
+  "contextFileName": "GEMINI.md",
+  "mcpServers": {
+    "vayancy": {
+      "url": "https://vayancy-agentic-brain-production.up.railway.app/mcp/hospitality/sse"
+    }
+  }
+}

@@ -3,7 +3,7 @@
   "name": "vayancy-travelos",
   "displayName": "Vayancy TravelOS — Mediterranean Luxury Clearing Rail",
   "version": "1.0.0",
-  "description": "Direct AI booking rail for luxury villas and boutique hotels across Greece and the Mediterranean. Live PMS availability, verified direct owner rates (0% OTA commission markup), 15-minute inventory hold locks, and instant Stripe checkout.",
+  "description": "Direct AI booking rail for luxury villas, boutique hotels, and catamaran charters across Greece and the Mediterranean. Live PMS availability, verified direct owner rates (0% OTA commission markup), 15-minute inventory hold locks, and instant Stripe checkout.",
   "publisher": {
     "name": "Vayancy",
     "url": "https://vayancy.gr",
@@ -16,8 +16,8 @@
   "homepage": "https://vayancy.gr",
   "transport": {
     "type": "sse",
-    "url": "https://api.vayancy.gr/mcp/hospitality/sse",
-    "messagesUrl": "https://api.vayancy.gr/mcp/hospitality/messages/"
+    "url": "https://vayancy-agentic-brain-production.up.railway.app/mcp/hospitality/sse",
+    "customDomainUrl": "https://api.vayancy.gr/mcp/hospitality/sse"
   },
   "authentication": {
     "type": "none",
@@ -34,10 +34,13 @@
   ],
   "tags": [
     "luxury-villas",
+    "catamarans",
+    "yacht-charters",
     "greece",
     "mykonos",
     "santorini",
     "lefkada",
+    "ionian",
     "mediterranean",
     "hotels",
     "direct-booking",
@@ -81,6 +84,41 @@
           }
         },
         "required": ["location", "check_in", "check_out", "guests"]
+      }
+    },
+    {
+      "name": "search_charters",
+      "description": "Search private catamaran and yacht charters across the Greek islands (Ionian, Cyclades, Saronic). Live fleet availability, skippered or bareboat, with zero broker commissions.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "embarkation_port": {
+            "type": "string",
+            "description": "Starting marina or island port (e.g. 'Lefkada Marina', 'Athens Marina Alimos', 'Mykonos Marina', 'Corfu Gouvia')"
+          },
+          "check_in": {
+            "type": "string",
+            "description": "Charter start date in YYYY-MM-DD format (typically Saturday-to-Saturday)"
+          },
+          "check_out": {
+            "type": "string",
+            "description": "Charter end date in YYYY-MM-DD format"
+          },
+          "guests": {
+            "type": "integer",
+            "description": "Total number of passengers / guests"
+          },
+          "vessel_type": {
+            "type": "string",
+            "enum": ["catamaran", "monohull_sailing", "motor_yacht"],
+            "description": "Preferred vessel type (default: catamaran)"
+          },
+          "skippered": {
+            "type": "boolean",
+            "description": "Whether a professional skipper is requested (true) or bareboat (false)"
+          }
+        },
+        "required": ["embarkation_port", "check_in", "check_out", "guests"]
       }
     },
     {

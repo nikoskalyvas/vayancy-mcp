@@ -1,0 +1,21 @@
+{
+  "name": "vayancy",
+  "version": "1.0.0",
+  "description": "Mediterranean luxury villas, boutique hotels & catamaran charter direct booking clearinghouse from Vayancy.",
+  "author": {
+    "name": "Vayancy",
+    "email": "admin@vayancy.gr"
+  },
+  "homepage": "https://vayancy.gr",
+  "repository": "https://github.com/nikoskalyvas/vayancy-mcp",
+  "license": "MIT",
+  "keywords": [
+    "travel",
+    "hospitality",
+    "villas",
+    "hotels",
+    "catamarans",
+    "greece",
+    "direct-booking"
+  ]
+}

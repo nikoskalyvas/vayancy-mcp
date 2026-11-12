@@ -1,0 +1,14 @@
+{
+  "name": "vayancy",
+  "owner": {
+    "name": "Vayancy",
+    "email": "admin@vayancy.gr"
+  },
+  "plugins": [
+    {
+      "name": "vayancy",
+      "source": "./",
+      "description": "Direct AI booking rail for luxury villas, boutique hotels & catamaran charters across Greece and the Mediterranean."
+    }
+  ]
+}

@@ -1,20 +1,20 @@
 <div align="center">
 
 # 🏛️ Vayancy TravelOS — Model Context Protocol (MCP) Server
-### The Direct AI Clearing Rail for Mediterranean Luxury Villas & Boutique Retreats
+### The Direct AI Clearing Rail for Mediterranean Luxury Villas, Boutique Hotels & Catamaran Charters
 
 [![MCP Protocol](https://img.shields.io/badge/MCP-2024--11--05-blue.svg?style=for-the-badge&logo=anthropic)](https://modelcontextprotocol.io/)
-[![Transport SSE](https://img.shields.io/badge/Transport-SSE%20Streaming-brightgreen.svg?style=for-the-badge)](https://api.vayancy.gr/mcp/hospitality/sse)
-[![Inventory](https://img.shields.io/badge/Coverage-Greece%20%26%20Mediterranean-orange.svg?style=for-the-badge)](https://vayancy.gr)
+[![Transport SSE](https://img.shields.io/badge/Transport-SSE%20Streaming-brightgreen.svg?style=for-the-badge)](https://vayancy-agentic-brain-production.up.railway.app/mcp/hospitality/sse)
+[![Coverage](https://img.shields.io/badge/Coverage-Greece%20%26%20Mediterranean-orange.svg?style=for-the-badge)](https://vayancy.gr)
 [![Commission](https://img.shields.io/badge/OTA%20Markup-0%25%20Direct-emerald.svg?style=for-the-badge)](https://vayancy.gr)
 [![Status](https://img.shields.io/badge/Railway-Live%20%26%20Verified-blueviolet.svg?style=for-the-badge)](https://vayancy-agentic-brain-production.up.railway.app/mcp/hospitality/sse)
 
 <p align="center">
-  <b>Connect Claude, Cursor, and Windsurf directly to real-time Mediterranean property management systems (PMS).</b><br>
-  Search verified private villas, verify live calendars, lock 15-minute reservation holds, and fulfill stays with direct Stripe checkout.
+  <b>Live luxury villa inventory, real-time PMS calendar sync, catamaran fleet charters, and direct-to-owner Stripe checkout — directly inside your AI assistant.</b><br>
+  Vayancy TravelOS is a hosted remote MCP server over Server-Sent Events (SSE). There is nothing to install or build locally.
 </p>
 
-[Quick Start](#-10-second-quick-start-claude-desktop) • [Live Conversation Demo](#-how-claude-fulfills-a-luxury-stay) • [Economic Comparison](#-the-economics-why-travelers-save-18-25) • [Available Tools](#-available-mcp-tools) • [Architecture](#-architecture)
+[Install Guide](#-install) • [What You Can Ask](#-what-you-can-ask) • [Live Conversation Demo](#-how-claude-fulfills-a-luxury-stay) • [Tools](#-available-mcp-tools) • [Economics](#-the-economics-why-travelers-save-18---25) • [Architecture](#-architecture)
 
 ---
 
@@ -22,41 +22,71 @@
 
 ## 💡 The Shift: From SEO to AEO (Agent Engine Optimization)
 
-For 20 years, travel discovery was **SEO**: spending millions on Google Ads to fight Booking.com and Airbnb for search keywords.
+For 20 years, travel discovery was **SEO**: spending billions on Google Ads to fight Booking.com and Airbnb for search keywords.
 
-Today, high-net-worth travelers don't open 40 browser tabs. **They ask Claude:**
-> *"Plan a 7-day luxury stay in Greece for 6 adults in July with an infinity pool, sea view, and private chef under €600/night."*
+Today, high-net-worth travelers don't open 40 browser tabs. **They ask Claude, ChatGPT, and Gemini:**
+> *"Plan a 7-day luxury stay in Greece for 6 adults in July with an infinity pool, sea view, and a 50ft catamaran charter for 2 days under €700/night."*
 
-Claude doesn't show Google banner ads. It checks its **connected MCP tools**, queries real-time PMS inventory, presents verified villas directly in the chat, and locks the dates with zero OTA middleman markups.
+AI assistants don't display banner ads. They check their **connected MCP tools**, query real-time PMS inventory, present verified direct-owner listings, and lock the dates with zero OTA middleman markups.
 
 **SEO was "rank where people search." TravelOS is "get installed where travelers ask."**
 
 ---
 
-## ⚡ 10-Second Quick Start (Claude Desktop)
+## ⚡ Server Details
 
-Add Vayancy TravelOS to your Claude Desktop configuration in one step:
+* **Server URL:** `https://vayancy-agentic-brain-production.up.railway.app/mcp/hospitality/sse`
+* **Custom Domain:** `https://api.vayancy.gr/mcp/hospitality/sse`
+* **Protocol:** Model Context Protocol (MCP) over Server-Sent Events (SSE)
+* **Auth:** None required for public traveler queries & 15-minute holds (optional `X-Tenant-Key` for private agency portfolios)
+* **Registry Identifier:** `gr.vayancy/travelos`
 
+---
+
+## 📦 Install
+
+| Client | How to Install |
+| :--- | :--- |
+| **Claude Desktop** | Add `vayancy` to `claude_desktop_config.json` ([1-step setup](#claude-desktop-setup)) |
+| **Claude Code** | `/plugin marketplace add nikoskalyvas/vayancy-mcp` then `/plugin install vayancy@vayancy`<br>*(or `claude mcp add vayancy --transport sse https://vayancy-agentic-brain-production.up.railway.app/mcp/hospitality/sse`)* |
+| **Cursor** | Add to `.cursor/mcp.json` or add remote MCP server URL `https://vayancy-agentic-brain-production.up.railway.app/mcp/hospitality/sse` |
+| **Gemini CLI** | `gemini extensions install https://github.com/nikoskalyvas/vayancy-mcp` |
+| **Cline & Roo Code** | MCP Servers → Remote Servers → name `vayancy`, URL `https://vayancy-agentic-brain-production.up.railway.app/mcp/hospitality/sse` |
+| **VS Code / Copilot** | MCP: Add Server → SSE → `https://vayancy-agentic-brain-production.up.railway.app/mcp/hospitality/sse` |
+| **ChatGPT** | Custom GPT Action / Connector pointing to the SSE endpoint |
+
+### Claude Desktop Setup
+
+Open your configuration file:
 * **macOS:** `~/Library/Application Support/Claude/claude_desktop_config.json`
 * **Windows:** `%APPDATA%\Claude\claude_desktop_config.json`
 
 ```json
 {
   "mcpServers": {
-    "vayancy-travelos": {
+    "vayancy": {
+      "type": "sse",
       "url": "https://vayancy-agentic-brain-production.up.railway.app/mcp/hospitality/sse"
     }
   }
 }
 ```
 
-> **Custom Domain:** You can also connect via `https://api.vayancy.gr/mcp/hospitality/sse` once custom DNS propagation is complete.
+Restart Claude Desktop, and the hammer icon 🔨 will display Vayancy tools.
 
 ---
 
-## 💬 How Claude Fulfills a Luxury Stay
+## 💬 What You Can Ask
 
-Here is the exact real-time interaction when Claude has Vayancy TravelOS connected:
+- *"Find me a 4-bedroom luxury villa in Lefkada with a private infinity pool and sea view for July 10-17 under €600/night."*
+- *"Check if Villa Nidri Hills is available for August 1 to 8 for 6 guests."*
+- *"What are the best direct-booking luxury properties in Mykonos or Santorini for a honeymoon in September?"*
+- *"Find a crewed 50ft catamaran charter departing from Lefkada Marina for 8 people the second week of July."*
+- *"Lock Villa Nidri Hills for 15 minutes so I can book directly with the owner without Airbnb fees."*
+
+---
+
+## 🎬 How Claude Fulfills a Luxury Stay
 
 ```markdown
 👤 Traveler:
@@ -66,11 +96,11 @@ Here is the exact real-time interaction when Claude has Vayancy TravelOS connect
 *Calling tool: search_properties(location="Lefkada", check_in="2026-07-10", check_out="2026-07-17", guests=6, max_price=600)*
 *Calling tool: check_availability(unit_id="nidri-hills-villa-1", check_in="2026-07-10", check_out="2026-07-17", guests=6)*
 
-"I found 3 verified luxury villas available for your dates in Lefkada. Here is the top match:
+"I found verified luxury villas available for your dates in Lefkada. Here is the top match:
 
 🏝️ Villa Nidri Hills (Private Infinity Pool & Panoramic Ionian Sea View)
 • 4 Bedrooms · 4 En-suite Bathrooms · Sleeps 8
-• Private infinity pool, outdoor BBQ kitchen, high-speed Starlink WiFi, daily housekeeping
+• Amenities: Private infinity pool, outdoor BBQ kitchen, high-speed Starlink WiFi, daily housekeeping
 • Direct Owner Rate: €450 / night (Total: €3,150 for 7 nights)
 • Airbnb Comparison: €3,780 (You save €630 in OTA guest service fees)
 
@@ -92,76 +122,28 @@ Click the link above to complete your booking directly with the property owner. 
 
 ---
 
-## 💰 The Economics: Why Travelers Save 18% – 25%
+## 🛠️ Available MCP Tools
 
-| Feature | Legacy OTAs (Airbnb / Booking.com) | 🏛️ Vayancy TravelOS (via Claude) |
-| :--- | :--- | :--- |
-| **Guest Service Fee** | **14% – 18% markup** added at checkout | **0% Direct Booking** (Direct owner rates) |
-| **Host Commission** | **3% – 15% deducted** from payout | **0% Commission Rail** |
-| **Average Savings** | \$0 | **€600 – €2,500+ saved per stay** |
-| **Inventory Hold** | ❌ None (often booked while entering credit card) | ✅ **15-minute real-time PMS lock** |
-| **Calendar Sync** | Delayed iCal sync (frequent double bookings) | ✅ **Live 2-way PMS Adapter (WebHotelier, Avantio, HostHub)** |
-| **Payment Rail** | Proprietary walled-garden escrow | ✅ **Direct Stripe Connect direct-to-owner** |
+| Tool | Description |
+| :--- | :--- |
+| `search_properties` | Search verified Mediterranean luxury villas, boutique hotels, and retreats. Filters by location, dates, guest count, max price, and amenities (`pool,sea_view,ac,beachfront`). |
+| `search_charters` | Search crewed or bareboat catamaran and yacht charters across the Greek islands (Ionian, Cyclades, Saronic). |
+| `check_availability` | Verifies real-time calendar availability directly against property management systems (PMS) before quoting. |
+| `get_rate_details` | Retrieves itemized owner rates, cleaning fees, taxes, and cancellation policies with zero OTA markup. |
+| `create_hold` | Places a 15-minute atomic reservation lock on the PMS calendar and generates a secure direct Stripe checkout link. |
 
 ---
 
-## 🛠️ Available MCP Tools
+## 💰 The Economics: Why Travelers Save 18% – 25%
 
-### 1. `search_properties`
-Queries verified Mediterranean direct-booking inventory filtered by location, dates, guest count, price, and luxury amenities.
-```json
-{
-  "location": "Lefkada",
-  "check_in": "2026-07-10",
-  "check_out": "2026-07-17",
-  "guests": 6,
-  "max_price": 600,
-  "amenities": "pool,sea_view,ac,beachfront,wifi"
-}
-```
-
-### 2. `check_availability`
-Checks real-time calendar availability for a specific accommodation against property management systems before quoting.
-```json
-{
-  "unit_id": "nidri-hills-villa-1",
-  "check_in": "2026-07-10",
-  "check_out": "2026-07-17",
-  "guests": 6
-}
-```
-
-### 3. `get_rate_details`
-Retrieves itemized direct-booking rates, taxes, cleaning fees, and cancellation policies with zero OTA markup.
-```json
-{
-  "unit_id": "nidri-hills-villa-1",
-  "check_in": "2026-07-10",
-  "check_out": "2026-07-17",
-  "guests": 6
-}
-```
-
-### 4. `create_hold`
-Places a 15-minute reservation lock on the property calendar and returns a secure, direct checkout URL.
-```json
-{
-  "unit_id": "nidri-hills-villa-1",
-  "check_in": "2026-07-10",
-  "check_out": "2026-07-17",
-  "guests": 6,
-  "guest_email": "traveler@vayancy.gr"
-}
-```
-**Returns:**
-```json
-{
-  "success": true,
-  "hold_id": "hld_4a9b8c2d",
-  "expires_at": "2026-07-10T14:30:00Z",
-  "checkout_url": "https://vayancy.gr/checkout/hld_4a9b8c2d"
-}
-```
+| Feature | Legacy OTAs (Airbnb / Booking.com) | 🏛️ Vayancy TravelOS (via Claude / AI) |
+| :--- | :--- | :--- |
+| **Guest Service Fee** | **14% – 18% markup** added at checkout | **0% Direct Booking** (Direct owner rates) |
+| **Host Commission** | **3% – 15% deducted** from payout | **0% Commission Rail** |
+| **Average Savings** | $0 | **€600 – €2,500+ saved per stay** |
+| **Inventory Hold** | ❌ None (often booked while entering payment) | ✅ **15-minute real-time PMS lock** |
+| **Calendar Sync** | Delayed iCal sync (risk of double bookings) | ✅ **Live 2-way PMS Adapter (HostHub, WebHotelier, Avantio)** |
+| **Payment Rail** | Proprietary walled-garden escrow | ✅ **Direct Stripe Connect direct-to-owner** |
 
 ---
 
@@ -171,16 +153,19 @@ Places a 15-minute reservation lock on the property calendar and returns a secur
 [ Affluent Traveler ]
          │
          ▼
-[ Anthropic Claude / AI Agent ]
+[ Anthropic Claude / ChatGPT / Gemini / Cursor ]
          │
          │ (Model Context Protocol over SSE)
          ▼
 [ Vayancy TravelOS Gateway ]  ──>  api.vayancy.gr/mcp/hospitality/sse
          │
          ├── [ Real-Time PMS Sync Engine ]
+         │       ├── HostHub / SyncBnb (Multi-channel sync)
          │       ├── WebHotelier (Hotels & Suites)
-         │       ├── Avantio (Luxury Villa Portfolios)
-         │       └── HostHub / SyncBnb (Multi-channel sync)
+         │       └── Avantio (Luxury Villa Portfolios)
+         │
+         ├── [ Fleet Charter Sync ]
+         │       └── NauSYS / YachtSys Real-Time Fleet Feed
          │
          ├── [ Inventory Lock Manager ]
          │       └── 15-minute atomic calendar hold
@@ -191,23 +176,15 @@ Places a 15-minute reservation lock on the property calendar and returns a secur
 
 ---
 
-## 🏖️ For Greek Villa Owners & Boutique Hotel Operators
+## 🏖️ For Villa Owners & Yacht Fleet Operators
 
-Are you a property manager, boutique hotelier, or luxury villa owner in Greece?
+Are you a property manager, boutique hotelier, or yacht operator in Greece?
 
-Connect your PMS to Vayancy TravelOS to receive direct, commission-free reservations from travelers using Claude.
+Connect your PMS or fleet calendar to Vayancy TravelOS to receive direct, commission-free reservations from travelers using AI assistants worldwide.
 
-* **Supported PMS Adapters:** WebHotelier, Avantio, HostHub (SyncBnb), Lodgify.
+* **Supported PMS Adapters:** HostHub (SyncBnb), WebHotelier, Avantio, Lodgify.
 * **Pricing:** 0% OTA commission. Direct payout to your Stripe Connect account.
-* **Contact & Onboarding:** Visit [vayancy.gr](https://vayancy.gr) or contact `admin@vayancy.gr`.
-
----
-
-## 🔒 Security & Privacy
-
-* **Zero Authentication Required for Travelers:** All traveler search, availability, rate quote, and hold creation tools operate publicly over standard HTTPS/SSE.
-* **No PII Stored by Claude:** Guest contact email is used solely to associate the 15-minute hold with the guest on Stripe Checkout.
-* **Optional Agency Header:** Property management firms and multi-property operators can pass `X-Tenant-Key` to scope queries exclusively to their private managed portfolio.
+* **Contact & Onboarding:** Visit [vayancy.gr](https://vayancy.gr) or email `admin@vayancy.gr`.
 
 ---
 
