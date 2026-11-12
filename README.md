@@ -78,8 +78,8 @@ Restart Claude Desktop, and the hammer icon 🔨 will display Vayancy tools.
 
 ## 💬 What You Can Ask
 
-- *"Find me a 4-bedroom luxury villa in Lefkada with a private infinity pool and sea view for July 10-17 under €600/night."*
-- *"Check if Villa Nidri Hills is available for August 1 to 8 for 6 guests."*
+- *"Find me a 5-bedroom luxury villa in Lefkada for 10-11 guests with a private infinity pool and sea view for July 10-17 under €700/night."*
+- *"Check if Villa Nidri Hills is available for August 1 to 8 for 10 guests."*
 - *"What are the best direct-booking luxury properties in Mykonos or Santorini for a honeymoon in September?"*
 - *"Find a crewed 50ft catamaran charter departing from Lefkada Marina for 8 people the second week of July."*
 - *"Lock Villa Nidri Hills for 15 minutes so I can book directly with the owner without Airbnb fees."*
@@ -90,19 +90,19 @@ Restart Claude Desktop, and the hammer icon 🔨 will display Vayancy tools.
 
 ```markdown
 👤 Traveler:
-"Find me a 4-bedroom luxury villa in Lefkada with a private infinity pool and sea view for July 10-17 under €600/night."
+"Find me a 5-bedroom luxury villa in Lefkada for 10 guests with a private infinity pool and sea view for July 10-17 under €700/night."
 
 🤖 Claude:
-*Calling tool: search_properties(location="Lefkada", check_in="2026-07-10", check_out="2026-07-17", guests=6, max_price=600)*
-*Calling tool: check_availability(unit_id="nidri-hills-villa-1", check_in="2026-07-10", check_out="2026-07-17", guests=6)*
+*Calling tool: search_properties(location="Lefkada", check_in="2026-07-10", check_out="2026-07-17", guests=10, max_price=700)*
+*Calling tool: check_availability(unit_id="nidri-hills-villa", check_in="2026-07-10", check_out="2026-07-17", guests=10)*
 
 "I found verified luxury villas available for your dates in Lefkada. Here is the top match:
 
 🏝️ Villa Nidri Hills (Private Infinity Pool & Panoramic Ionian Sea View)
-• 4 Bedrooms · 4 En-suite Bathrooms · Sleeps 8
-• Amenities: Private infinity pool, outdoor BBQ kitchen, high-speed Starlink WiFi, daily housekeeping
-• Direct Owner Rate: €450 / night (Total: €3,150 for 7 nights)
-• Airbnb Comparison: €3,780 (You save €630 in OTA guest service fees)
+• 5 Bedrooms · Sleeps up to 11 guests
+• Amenities: Private infinity pool, outdoor BBQ kitchen, panoramic Skorpios/Ionian sea views, high-speed Starlink WiFi, daily housekeeping
+• Direct Owner Rate: €550 / night (Total: €3,850 for 7 nights)
+• Airbnb Comparison: €4,620 (You save €770 in OTA guest service fees)
 
 Would you like me to hold this villa for 15 minutes while you finalize your flights?"
 
@@ -110,7 +110,7 @@ Would you like me to hold this villa for 15 minutes while you finalize your flig
 "Yes please, lock the dates for me."
 
 🤖 Claude:
-*Calling tool: create_hold(unit_id="nidri-hills-villa-1", check_in="2026-07-10", check_out="2026-07-17", guests=6, guest_email="guest@luxurytravel.com")*
+*Calling tool: create_hold(unit_id="nidri-hills-villa", check_in="2026-07-10", check_out="2026-07-17", guests=10, guest_email="guest@luxurytravel.com")*
 
 "Done! Villa Nidri Hills is locked on the PMS calendar for the next 15 minutes:
 • Hold ID: hld_8f92a1c09e

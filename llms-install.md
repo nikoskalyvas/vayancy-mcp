@@ -77,6 +77,6 @@ Add to `cline_mcp_settings.json`:
 
 ## 3. Verify Connection
 Ask your AI assistant:
-> *"Find me a 4-bedroom luxury villa in Lefkada with a private infinity pool and sea view for July 10-17 under €600/night."*
+> *"Find me a 5-bedroom luxury villa in Lefkada for 10 guests with a private infinity pool and sea view for July 10-17 under €700/night."*
 
 The assistant will invoke `search_properties` and return real-time direct-booking villas with live PMS availability.
