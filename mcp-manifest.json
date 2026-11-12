@@ -1,0 +1,169 @@
+{
+  "$schema": "https://json.schemastore.org/mcp-server.json",
+  "name": "vayancy-travelos",
+  "displayName": "Vayancy TravelOS — Mediterranean Luxury Clearing Rail",
+  "version": "1.0.0",
+  "description": "Direct AI booking rail for luxury villas and boutique hotels across Greece and the Mediterranean. Live PMS availability, verified direct owner rates (0% OTA commission markup), 15-minute inventory hold locks, and instant Stripe checkout.",
+  "publisher": {
+    "name": "Vayancy",
+    "url": "https://vayancy.gr",
+    "contact": "support@vayancy.gr"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nikoskalyvas/vayancy-mcp"
+  },
+  "homepage": "https://vayancy.gr",
+  "transport": {
+    "type": "sse",
+    "url": "https://api.vayancy.gr/mcp/hospitality/sse",
+    "messagesUrl": "https://api.vayancy.gr/mcp/hospitality/messages/"
+  },
+  "authentication": {
+    "type": "none",
+    "optionalHeaders": {
+      "X-Tenant-Key": "Optional API key for PMS partners and property managers to scope searches to their private portfolio."
+    }
+  },
+  "categories": [
+    "travel",
+    "hospitality",
+    "booking",
+    "e-commerce",
+    "luxury"
+  ],
+  "tags": [
+    "luxury-villas",
+    "greece",
+    "mykonos",
+    "santorini",
+    "lefkada",
+    "mediterranean",
+    "hotels",
+    "direct-booking",
+    "real-time-pms"
+  ],
+  "capabilities": {
+    "tools": true,
+    "resources": false,
+    "prompts": false
+  },
+  "tools": [
+    {
+      "name": "search_properties",
+      "description": "Search verified Mediterranean luxury villas, boutique hotels, and vacation rentals available for direct booking without OTA commission. Returns live pricing, photos, bedrooms, and direct booking links.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "location": {
+            "type": "string",
+            "description": "Destination name in Greece or Mediterranean (e.g. 'Mykonos', 'Santorini', 'Lefkada', 'Crete', 'Athens Riviera', 'Paros', 'Corfu')"
+          },
+          "check_in": {
+            "type": "string",
+            "description": "Check-in date in YYYY-MM-DD format"
+          },
+          "check_out": {
+            "type": "string",
+            "description": "Check-out date in YYYY-MM-DD format"
+          },
+          "guests": {
+            "type": "integer",
+            "description": "Total number of guests"
+          },
+          "max_price": {
+            "type": "number",
+            "description": "Maximum nightly price in EUR (optional)"
+          },
+          "amenities": {
+            "type": "string",
+            "description": "Comma-separated amenities (e.g. 'pool,sea_view,ac,beachfront,wifi,chef,jacuzzi')"
+          }
+        },
+        "required": ["location", "check_in", "check_out", "guests"]
+      }
+    },
+    {
+      "name": "check_availability",
+      "description": "Check real-time calendar availability for a specific accommodation against property management systems (PMS). Always verify before quoting.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "unit_id": {
+            "type": "string",
+            "description": "Unit ID or property slug (e.g. 'nidri-hills-villa-1')"
+          },
+          "check_in": {
+            "type": "string",
+            "description": "Check-in date in YYYY-MM-DD format"
+          },
+          "check_out": {
+            "type": "string",
+            "description": "Check-out date in YYYY-MM-DD format"
+          },
+          "guests": {
+            "type": "integer",
+            "description": "Total number of guests"
+          }
+        },
+        "required": ["unit_id", "check_in", "check_out", "guests"]
+      }
+    },
+    {
+      "name": "get_rate_details",
+      "description": "Retrieve comprehensive rate breakdown, direct owner discounts, cleaning fee, taxes, and cancellation policies for a stay.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "unit_id": {
+            "type": "string",
+            "description": "Unit ID or property slug"
+          },
+          "check_in": {
+            "type": "string",
+            "description": "Check-in date in YYYY-MM-DD format"
+          },
+          "check_out": {
+            "type": "string",
+            "description": "Check-out date in YYYY-MM-DD format"
+          },
+          "guests": {
+            "type": "integer",
+            "description": "Total number of guests"
+          }
+        },
+        "required": ["unit_id", "check_in", "check_out", "guests"]
+      }
+    },
+    {
+      "name": "create_hold",
+      "description": "Place a 15-minute reservation lock on the property calendar and generate a direct Stripe checkout link. Call when the traveler confirms they want to proceed.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "unit_id": {
+            "type": "string",
+            "description": "Unit ID or property slug"
+          },
+          "check_in": {
+            "type": "string",
+            "description": "Check-in date in YYYY-MM-DD format"
+          },
+          "check_out": {
+            "type": "string",
+            "description": "Check-out date in YYYY-MM-DD format"
+          },
+          "guests": {
+            "type": "integer",
+            "description": "Total number of guests"
+          },
+          "guest_email": {
+            "type": "string",
+            "description": "Primary guest contact email"
+          }
+        },
+        "required": ["unit_id", "check_in", "check_out", "guests", "guest_email"]
+      }
+    }
+  ]
+}

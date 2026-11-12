@@ -1,0 +1,32 @@
+{
+  "name": "@vayancy/mcp",
+  "version": "1.0.0",
+  "description": "Model Context Protocol (MCP) server for Vayancy TravelOS — Mediterranean luxury villa and boutique hotel booking clearinghouse.",
+  "main": "index.js",
+  "bin": {
+    "vayancy-mcp": "./bin/cli.js"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "claude",
+    "anthropic",
+    "travel",
+    "hospitality",
+    "greece",
+    "mediterranean",
+    "villas",
+    "booking",
+    "sse"
+  ],
+  "author": "Vayancy <support@vayancy.gr> (https://vayancy.gr)",
+  "license": "MIT",
+  "homepage": "https://vayancy.gr",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nikoskalyvas/vayancy-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nikoskalyvas/vayancy-mcp/issues"
+  }
+}

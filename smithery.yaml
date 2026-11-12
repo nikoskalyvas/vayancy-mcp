@@ -1,0 +1,16 @@
+name: "vayancy-travelos"
+description: "Direct AI booking rail for luxury villas and boutique hotels across Greece and the Mediterranean. Live PMS inventory, zero OTA markup, 15-minute hold locks, and direct Stripe checkout."
+version: "1.0.0"
+homepage: "https://vayancy.gr"
+repository: "https://github.com/nikoskalyvas/vayancy-mcp"
+author: "Vayancy"
+transport:
+  type: "sse"
+  url: "https://api.vayancy.gr/mcp/hospitality/sse"
+tags:
+  - "travel"
+  - "hospitality"
+  - "villas"
+  - "greece"
+  - "direct-booking"
+  - "booking"
