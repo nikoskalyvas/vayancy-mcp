@@ -63,8 +63,8 @@
       ]
     },
     {
-      "name": "greek_island_charter",
-      "description": "Search private catamaran and sailing yacht charters across Greek islands (Ionian, Cyclades, Saronic).",
+      "name": "mediterranean_charter",
+      "description": "Search private catamaran and sailing yacht charters across Mediterranean islands (Ionian, Cyclades, Saronic).",
       "arguments": [
         { "name": "port", "description": "Marina or port (e.g. 'Lefkada Marina', 'Athens Alimos')", "required": false },
         { "name": "guests", "description": "Total passengers", "required": false },
@@ -124,7 +124,7 @@
     },
     {
       "name": "search_charters",
-      "description": "Search private catamaran and yacht charters across the Greek islands (Ionian, Cyclades, Saronic). Live fleet availability, skippered or bareboat, with zero broker commissions.",
+      "description": "Search private catamaran and yacht charters across Mediterranean islands (Ionian, Cyclades, Saronic). Live fleet availability, skippered or bareboat, with zero broker commissions.",
       "inputSchema": {
         "type": "object",
         "properties": {

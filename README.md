@@ -128,7 +128,7 @@ Click the link above to complete your booking directly with the property owner. 
 | Tool | Description |
 | :--- | :--- |
 | `search_properties` | Search verified Mediterranean luxury villas, boutique hotels, and retreats. Filters by location, dates, guest count, max price, and amenities (`pool,sea_view,ac,beachfront`). |
-| `search_charters` | Search crewed or bareboat catamaran and yacht charters across the Greek islands (Ionian, Cyclades, Saronic). |
+| `search_charters` | Search crewed or bareboat catamaran and yacht charters across Mediterranean destinations (Ionian, Cyclades, Saronic). |
 | `check_availability` | Verifies real-time calendar availability directly against property management systems (PMS) before quoting. |
 | `get_rate_details` | Retrieves itemized owner rates, cleaning fees, taxes, and cancellation policies with zero OTA markup. |
 | `create_hold` | Places a 15-minute atomic reservation lock on the PMS calendar and generates a secure direct Stripe checkout link. |
@@ -137,7 +137,7 @@ Click the link above to complete your booking directly with the property owner. 
 | Prompt | Description |
 | :--- | :--- |
 | `find_luxury_villa` | Search verified Mediterranean luxury villas and boutique hotels with private pool and sea view (0% OTA fee). |
-| `greek_island_charter` | Search private catamaran and sailing yacht charters across Greek islands (Ionian, Cyclades, Saronic). |
+| `mediterranean_charter` | Search private catamaran and sailing yacht charters across Mediterranean islands (Ionian, Cyclades, Saronic). |
 | `compare_ota_savings` | Calculate exact guest savings (18%-25%) booking direct with property owner vs Airbnb / Booking.com. |
 | `hold_reservation` | Place a 15-minute atomic calendar lock on PMS inventory and generate direct Stripe checkout. |
 
