@@ -2,7 +2,7 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.nikoskalyvas/vayancy-travelos",
   "title": "Vayancy TravelOS",
-  "description": "Mediterranean luxury villa & hotel booking clearing rail with real-time PMS inventory and Stripe holds.",
+  "description": "Mediterranean luxury villa booking rail with real-time PMS inventory & direct Stripe holds.",
   "repository": {
     "url": "https://github.com/nikoskalyvas/vayancy-mcp",
     "source": "github"
