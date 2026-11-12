@@ -49,8 +49,44 @@
   "capabilities": {
     "tools": true,
     "resources": false,
-    "prompts": false
+    "prompts": true
   },
+  "prompts": [
+    {
+      "name": "find_luxury_villa",
+      "description": "Search verified Mediterranean luxury villas and boutique hotels with private pool and sea view (0% OTA fee).",
+      "arguments": [
+        { "name": "location", "description": "Destination in Greece (e.g. 'Lefkada', 'Mykonos')", "required": false },
+        { "name": "guests", "description": "Total guests", "required": false },
+        { "name": "check_in", "description": "Check-in date (YYYY-MM-DD)", "required": false },
+        { "name": "check_out", "description": "Check-out date (YYYY-MM-DD)", "required": false }
+      ]
+    },
+    {
+      "name": "greek_island_charter",
+      "description": "Search private catamaran and sailing yacht charters across Greek islands (Ionian, Cyclades, Saronic).",
+      "arguments": [
+        { "name": "port", "description": "Marina or port (e.g. 'Lefkada Marina', 'Athens Alimos')", "required": false },
+        { "name": "guests", "description": "Total passengers", "required": false },
+        { "name": "vessel_type", "description": "catamaran, monohull_sailing, motor_yacht", "required": false }
+      ]
+    },
+    {
+      "name": "compare_ota_savings",
+      "description": "Calculate exact guest savings (18%-25%) booking direct with property owner vs Airbnb / Booking.com.",
+      "arguments": [
+        { "name": "unit_id", "description": "Unit ID or property slug (e.g. 'nidri-hills-villa')", "required": false }
+      ]
+    },
+    {
+      "name": "hold_reservation",
+      "description": "Place a 15-minute atomic calendar lock on PMS inventory and generate direct Stripe checkout.",
+      "arguments": [
+        { "name": "unit_id", "description": "Unit ID or property slug (e.g. 'nidri-hills-villa')", "required": true },
+        { "name": "guest_email", "description": "Primary guest contact email", "required": true }
+      ]
+    }
+  ],
   "tools": [
     {
       "name": "search_properties",
